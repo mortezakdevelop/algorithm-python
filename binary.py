@@ -1,7 +1,19 @@
-numbers = [12, 5, 28, 9, 34, 17]
-max_number = numbers[0]
+numbers = [12, 5, 28, 9, 34, 17, 25, 45 , 11]
+numbers.sort()
+target = 28
 
-for number in numbers:
-    if number > max_number:
-        max_number = number
-print(max_number)
+left = 0
+right = len(numbers) - 1
+
+while left <= right:
+    mid = (left + right) // 2
+    
+    if numbers[mid] ==  target:
+        print("index of target", mid)
+        break
+    elif numbers[mid] < target:
+        left = mid + 1
+    else:
+        right = mid -1
+        
+
